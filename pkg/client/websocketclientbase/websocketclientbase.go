@@ -2,10 +2,13 @@ package websocketclientbase
 
 import (
 	"fmt"
+	"github.com/fireflyhoo/huobi_golang/config"
 	"github.com/fireflyhoo/huobi_golang/internal/gzip"
 	"github.com/fireflyhoo/huobi_golang/internal/model"
 	"github.com/fireflyhoo/huobi_golang/logging/applogger"
 	"github.com/gorilla/websocket"
+	"net/http"
+	url2 "net/url"
 	"strings"
 	"sync"
 	"time"
@@ -110,7 +113,14 @@ func (p *WebSocketClientBase) connectWebSocket() {
 	var err error
 	url := fmt.Sprintf("wss://%s%s", p.host, p.path)
 	applogger.Debug("WebSocket connecting...")
-	p.conn, _, err = websocket.DefaultDialer.Dial(url, nil)
+	var dialer = websocket.DefaultDialer
+	proxyUrl, err := url2.Parse("http://" + config.ProxyHost + ":" + config.ProxyPort)
+	if config.HttpProxy {
+		dialer = &websocket.Dialer{
+			Proxy: http.ProxyURL(proxyUrl),
+		}
+	}
+	p.conn, _, err = dialer.Dial(url, nil)
 	if err != nil {
 		applogger.Error("WebSocket connected error: %s", err)
 		return
