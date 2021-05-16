@@ -2,10 +2,10 @@ package marketwebsocketclientexample
 
 import (
 	"fmt"
-	"github.com/huobirdcenter/huobi_golang/config"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
-	"github.com/huobirdcenter/huobi_golang/pkg/client/marketwebsocketclient"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/market"
+	"github.com/fireflyhoo/huobi_golang/config"
+	"github.com/fireflyhoo/huobi_golang/logging/applogger"
+	"github.com/fireflyhoo/huobi_golang/pkg/client/marketwebsocketclient"
+	"github.com/fireflyhoo/huobi_golang/pkg/model/market"
 )
 
 func RunAllExamples() {
@@ -151,7 +151,7 @@ func reqAndSubscribe150LevelMarketByPrice() {
 						if t.Asks != nil {
 							applogger.Info("Ask, count=%d", len(t.Asks))
 							for i := len(t.Asks) - 1; i >= 0; i-- {
-								applogger.Info("%v - %v" +
+								applogger.Info("%v - %v"+
 									"", t.Asks[i][0], t.Asks[i][1])
 							}
 						}
@@ -251,9 +251,9 @@ func reqAndSubscribeMarketByPriceTick() {
 
 	client.SetHandler(
 		func() {
-			client.Request("btcusdt", 5,"1437")
+			client.Request("btcusdt", 5, "1437")
 
-			client.Subscribe("btcusdt", 5,"1437")
+			client.Subscribe("btcusdt", 5, "1437")
 		},
 		func(resp interface{}) {
 			depthResponse, ok := resp.(market.SubscribeMarketByPriceResponse)
@@ -265,7 +265,7 @@ func reqAndSubscribeMarketByPriceTick() {
 						if t.Asks != nil {
 							applogger.Info("Ask, count=%d", len(t.Asks))
 							for i := len(t.Asks) - 1; i >= 0; i-- {
-								applogger.Info("%v - %v" +
+								applogger.Info("%v - %v"+
 									"", t.Asks[i][0], t.Asks[i][1])
 							}
 						}
@@ -307,7 +307,7 @@ func reqAndSubscribeMarketByPriceTick() {
 	fmt.Println("Press ENTER to unsubscribe and stop...")
 	fmt.Scanln()
 
-	client.UnSubscribe("btcusdt", 5,"1437")
+	client.UnSubscribe("btcusdt", 5, "1437")
 
 	client.Close()
 	applogger.Info("Client closed")

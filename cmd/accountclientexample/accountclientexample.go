@@ -1,10 +1,10 @@
 package accountclientexample
 
 import (
-	"github.com/huobirdcenter/huobi_golang/config"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
-	"github.com/huobirdcenter/huobi_golang/pkg/client"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/account"
+	"github.com/fireflyhoo/huobi_golang/config"
+	"github.com/fireflyhoo/huobi_golang/logging/applogger"
+	"github.com/fireflyhoo/huobi_golang/pkg/client"
+	"github.com/fireflyhoo/huobi_golang/pkg/model/account"
 	"github.com/shopspring/decimal"
 )
 
@@ -60,7 +60,7 @@ func getAccountAssetValuation() {
 	}
 }
 
-func transferAccount()  {
+func transferAccount() {
 	client := new(client.AccountClient).Init(config.AccessKey, config.SecretKey, config.Host)
 	request := account.TransferAccountRequest{
 		FromUser:        125753978,
@@ -148,7 +148,7 @@ func getPointBalance() {
 
 func transferPoint() {
 	client := new(client.AccountClient).Init(config.AccessKey, config.SecretKey, config.Host)
-	request := account.TransferPointRequest{FromUid: "125753978", ToUid:"128654685", GroupId: 0, Amount:"0"}
+	request := account.TransferPointRequest{FromUid: "125753978", ToUid: "128654685", GroupId: 0, Amount: "0"}
 	resp, err := client.TransferPoint(request)
 	if err != nil {
 		applogger.Error("Transfer points error: %s", err)

@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/huobirdcenter/huobi_golang/internal"
-	"github.com/huobirdcenter/huobi_golang/internal/requestbuilder"
-	"github.com/huobirdcenter/huobi_golang/pkg/model"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/account"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/subuser"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/wallet"
+	"github.com/fireflyhoo/huobi_golang/internal"
+	"github.com/fireflyhoo/huobi_golang/internal/requestbuilder"
+	"github.com/fireflyhoo/huobi_golang/pkg/model"
+	"github.com/fireflyhoo/huobi_golang/pkg/model/account"
+	"github.com/fireflyhoo/huobi_golang/pkg/model/subuser"
+	"github.com/fireflyhoo/huobi_golang/pkg/model/wallet"
 	"strconv"
 	"strings"
 )
@@ -69,7 +69,6 @@ func (p *SubUserClient) SubUserManagement(request subuser.SubUserManagementReque
 	}
 	return result.Data, nil
 }
-
 
 // Set Tradable Market for Sub Users
 func (p *SubUserClient) SetSubUserTradableMarket(request subuser.SetSubUserTradableMarketRequest) ([]subuser.TradableMarket, error) {

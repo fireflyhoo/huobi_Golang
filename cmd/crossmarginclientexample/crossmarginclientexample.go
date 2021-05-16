@@ -1,10 +1,10 @@
 package crossmarginclientexample
 
 import (
-	"github.com/huobirdcenter/huobi_golang/config"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
-	"github.com/huobirdcenter/huobi_golang/pkg/client"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/margin"
+	"github.com/fireflyhoo/huobi_golang/config"
+	"github.com/fireflyhoo/huobi_golang/logging/applogger"
+	"github.com/fireflyhoo/huobi_golang/pkg/client"
+	"github.com/fireflyhoo/huobi_golang/pkg/model/margin"
 )
 
 func RunAllExamples() {
@@ -115,7 +115,7 @@ func marginAccountsBalance() {
 
 //  Repays general margin loan with you asset in your margin account.
 func genernalMarginOrdersRepay() {
-	request := margin.CrossMarginGeneralReplayLoanOptionalRequest{AccountId: "12345", Currency:"btc", Amount:"0.01"}
+	request := margin.CrossMarginGeneralReplayLoanOptionalRequest{AccountId: "12345", Currency: "btc", Amount: "0.01"}
 	client := new(client.CrossMarginClient).Init(config.AccessKey, config.SecretKey, config.Host)
 	resp, err := client.GeneralRepay(request)
 	if err != nil {

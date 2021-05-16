@@ -1,11 +1,11 @@
 package orderclientexample
 
 import (
-	"github.com/huobirdcenter/huobi_golang/config"
-	"github.com/huobirdcenter/huobi_golang/logging/applogger"
-	"github.com/huobirdcenter/huobi_golang/pkg/client"
-	"github.com/huobirdcenter/huobi_golang/pkg/model"
-	"github.com/huobirdcenter/huobi_golang/pkg/model/order"
+	"github.com/fireflyhoo/huobi_golang/config"
+	"github.com/fireflyhoo/huobi_golang/logging/applogger"
+	"github.com/fireflyhoo/huobi_golang/pkg/client"
+	"github.com/fireflyhoo/huobi_golang/pkg/model"
+	"github.com/fireflyhoo/huobi_golang/pkg/model/order"
 )
 
 func RunAllExamples() {
