@@ -1,24 +1,24 @@
 package internal
 
 import (
-	"fmt"
 	"github.com/fireflyhoo/huobi_golang/config"
 	"github.com/fireflyhoo/huobi_golang/logging/perflogger"
 	"io/ioutil"
 	"net/http"
-	"net/url"
 	"strings"
 )
+import "net/url"
 
-func HttpGet(url string) (string, error) {
+func HttpGet(urlstr string) (string, error) {
 	logger := perflogger.GetInstance()
 	logger.Start()
+
 	proxy, err := url.Parse("http://" + config.ProxyHost + ":" + config.ProxyPort)
-	fmt.Print(proxy)
+	//fmt.Print(proxy)
 	transport := &http.Transport{Proxy: http.ProxyURL(proxy)}
 	client := &http.Client{Transport: transport}
 
-	rep, _ := http.NewRequest("GET", url, nil)
+	rep, _ := http.NewRequest("GET", urlstr, nil)
 	resp, err := client.Do(rep)
 	if err != nil {
 		return "", err
@@ -26,7 +26,7 @@ func HttpGet(url string) (string, error) {
 	defer resp.Body.Close()
 	result, err := ioutil.ReadAll(resp.Body)
 
-	logger.StopAndLog("GET", url)
+	logger.StopAndLog("GET", urlstr)
 
 	return string(result), err
 }
