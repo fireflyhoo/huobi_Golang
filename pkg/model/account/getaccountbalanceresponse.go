@@ -6,9 +6,9 @@ type GetAccountBalanceResponse struct {
 }
 
 type AccountBalance struct {
-	Id    int       `json:"id"`
-	Type  string    `json:"type"`
-	State string    `json:"state"`
+	Id    int               `json:"id"`
+	Type  string            `json:"type"`
+	State string            `json:"state"`
 	List  []CurrencyBalance `json:"list"`
 }
 

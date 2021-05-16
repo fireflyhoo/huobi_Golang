@@ -1,8 +1,8 @@
 package algoorder
 
 type GetOpenOrdersResponse struct {
-	Code    int          `json:"code"`
-	Message string       `json:"message"`
+	Code    int    `json:"code"`
+	Message string `json:"message"`
 	Data    []struct {
 		AccountId     int    `json:"accountId"`
 		Source        string `json:"source"`
@@ -20,5 +20,5 @@ type GetOpenOrdersResponse struct {
 		LastActTime   int64  `json:"lastActTime"`
 		OrderStatus   string `json:"orderStatus"`
 	}
-	NextId  int64        `json:"nextId"`
+	NextId int64 `json:"nextId"`
 }

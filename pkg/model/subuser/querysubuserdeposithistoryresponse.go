@@ -3,10 +3,10 @@ package subuser
 import "github.com/shopspring/decimal"
 
 type QuerySubUserDepositHistoryResponse struct {
-	Code    int             `json:"code"`
-	Message string          `json:"message"`
+	Code    int              `json:"code"`
+	Message string           `json:"message"`
 	Data    []DepositHistory `json:"data"`
-	NextId  int64           `json:"nextId"`
+	NextId  int64            `json:"nextId"`
 }
 
 type DepositHistory struct {

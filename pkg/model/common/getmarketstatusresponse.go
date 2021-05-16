@@ -1,8 +1,8 @@
 package common
 
 type GetMarketStatusResponse struct {
-	Code    int             `json:"code"`
-	Message string          `json:"message"`
+	Code    int          `json:"code"`
+	Message string       `json:"message"`
 	Data    MarketStatus `json:"data"`
 }
 

@@ -10,12 +10,12 @@ var sugaredLogger *zap.SugaredLogger
 var atomicLevel zap.AtomicLevel
 
 func init() {
-	encoderCfg := zapcore.EncoderConfig {
-		TimeKey:		"time",
-		MessageKey:     "msg",
-		LevelKey:       "level",
-		EncodeLevel:    zapcore.CapitalColorLevelEncoder,
-		EncodeTime:     zapcore.ISO8601TimeEncoder,
+	encoderCfg := zapcore.EncoderConfig{
+		TimeKey:     "time",
+		MessageKey:  "msg",
+		LevelKey:    "level",
+		EncodeLevel: zapcore.CapitalColorLevelEncoder,
+		EncodeTime:  zapcore.ISO8601TimeEncoder,
 	}
 
 	// define default level as debug level

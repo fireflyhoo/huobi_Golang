@@ -1,8 +1,8 @@
 package account
 
 type GetPointBalanceResponse struct {
-	Code    int      `json:"code"`
-	Message string   `json:"message"`
+	Code    int    `json:"code"`
+	Message string `json:"message"`
 	Data    *struct {
 		AccountId      string `json:"accountId"`
 		AccountStatus  string `json:"accountStatus"`

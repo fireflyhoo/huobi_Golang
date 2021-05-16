@@ -10,6 +10,6 @@ type UserData struct {
 	UserName     string `json:"userName"`
 	Note         string `json:"note"`
 	Uid          int64  `json:"uid"`
-	ErrorCode    string  `json:"errCode"`
+	ErrorCode    string `json:"errCode"`
 	ErrorMessage string `json:"errMessage"`
 }

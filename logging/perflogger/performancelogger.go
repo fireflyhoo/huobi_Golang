@@ -10,6 +10,7 @@ import (
 
 // The global PerformanceLogger instance
 var performanceLogger *PerformanceLogger
+
 // The global switch for Performance logging
 var logEnabled = false
 

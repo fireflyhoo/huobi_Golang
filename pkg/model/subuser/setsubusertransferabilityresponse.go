@@ -7,7 +7,7 @@ type SetSubUserTransferabilityResponse struct {
 }
 
 type Transferability struct {
-	SubUid        int64 `json:"subUid"`
+	SubUid        int64  `json:"subUid"`
 	AccountType   string `json:"accountType"`
 	Transferrable bool   `json:"transferrable"`
 	ErrCode       int    `json:"errCode"`
